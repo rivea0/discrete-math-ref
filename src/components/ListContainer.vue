@@ -17,7 +17,7 @@ function filterList(filterBy: string, wholeList: { [k: string]: FormulaItem[] })
   }
 }
 
-function selectSubject(e: Event) {
+function selectSubject(e: MouseEvent) {
   const key = convertToKey((e.currentTarget as HTMLButtonElement)?.value)
   filterList(key, formulas)
   activeButton.value = key
@@ -63,7 +63,6 @@ const listOfSubjects = ref([
 }
 
 .subject-btn {
-  /* background-color: rgba(0, 0, 0, 0.03); */
   background-color: var(--background-color-primary);
   padding: 16px;
   border-color: rgba(147, 112, 219, 0.5);
@@ -76,8 +75,6 @@ const listOfSubjects = ref([
 }
 
 .subject-btn.isActive {
-  /* background-color: rgba(135, 206, 235, 0.7); */
-  /* background-color: rgba(112, 184, 219, 0.5); */
   background-color: var(--accent-color);
 }
 

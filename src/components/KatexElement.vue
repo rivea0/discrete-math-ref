@@ -61,6 +61,6 @@ button {
 }
 
 button:hover {
-  background-color: rgba(112, 184, 219, 0.5);;
+  background-color: rgba(112, 184, 219, 0.5);
 }
 </style>

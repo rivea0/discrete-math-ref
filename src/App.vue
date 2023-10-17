@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import ListContainer from './components/ListContainer.vue'
-import VueFooter from './components/VueFooter.vue'
 import LightThemeIcon from './components/icons/LightThemeIcon.vue'
 import DarkThemeIcon from './components/icons/DarkThemeIcon.vue'
+import GitHubIcon from './components/icons/GitHubIcon.vue'
+import MailIcon from './components/icons/MailIcon.vue'
+import SiteLinkIcon from './components/icons/SiteLinkIcon.vue'
 
 type UserTheme = 'light' | 'dark'
 
@@ -31,8 +33,8 @@ function toggleTheme() {
 }
 
 function getMediaPreference(): UserTheme {
-  const hasDarkPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  return (hasDarkPreference) ? 'dark' : 'light'
+  const hasDarkPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
+  return hasDarkPreference ? 'dark' : 'light'
 }
 </script>
 
@@ -56,16 +58,28 @@ function getMediaPreference(): UserTheme {
   <main>
     <ListContainer />
   </main>
-  <VueFooter />
+  <footer>
+    <div>
+      <p class="footer-primary">Made with &#128156; by Eda Eren. &copy; {{ new Date().getFullYear() }}</p>
+      <p>Rubik (fav)icon from <a href="https://www.svgrepo.com/collection/eighties-3/">the Eighties 3 collection</a> from SVG Repo.</p>
+      <p>Icons from <a href="https://phosphoricons.com">Phosphor Icons</a>.</p>
+      <div class="footer-icons">
+        <a href="https://github.com/rivea0" >
+          <GitHubIcon :fill-color="userTheme === 'light' ? '#10131a' : '#eff1f5'" />
+        </a>
+        <a href="mailto:edae.space@gmail.com">
+          <MailIcon :fill-color="userTheme === 'light' ? '#10131a' : '#eff1f5'" />
+        </a>
+        <a href="https://rivea0.github.io">
+          <SiteLinkIcon :fill-color="userTheme === 'light' ? '#10131a' : '#eff1f5'" />
+        </a>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Imprima&display=swap');
-
-header,
-main {
-  font-family: 'Imprima', sans-serif;
-}
 
 header {
   display: flex;
@@ -100,6 +114,17 @@ h4 {
 .theme-btn {
   background-color: inherit;
   border: none;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+  justify-content: center;
+}
+
+.footer-primary {
+  text-align: center;
 }
 
 @media (orientation: portrait) {

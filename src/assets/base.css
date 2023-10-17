@@ -8,27 +8,36 @@
 :root.light {
   --background-color-primary: #eff1f5;
   --background-color-secondary: #dadfe8;
-  --accent-color:  rgba(147, 112, 219, 0.3);
+  --accent-color: rgba(147, 112, 219, 0.3);
   --text-primary-color: #4c4f69;
+  --text-secondary-color: rgba(76, 79, 105, 0.7);
   --link-color: mediumpurple;
-  --success-bg: #70DB93;
+  --success-bg: #70db93;
 }
 
 :root.dark {
   --background-color-primary: #10131a;
   --background-color-secondary: #1d222f;
-  --accent-color: rgba(126,85,212, 0.5);
+  --accent-color: rgba(126, 85, 212, 0.5);
   --text-primary-color: #d0d6e1;
+  --text-secondary-color: rgba(208, 214, 225, 0.7);
   --link-color: mediumpurple;
   --success-bg: #208140;
 }
 
 body {
+  min-height: 100vh;
   background-color: var(--background-color-primary);
   color: var(--text-primary-color);
-  padding: 12px 1rem;
-  min-height: 100vh;
+  font-family: 'Imprima', sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 24px;
 }
 
 button {
@@ -37,4 +46,17 @@ button {
 
 a {
   color: var(--link-color);
+}
+
+
+footer {
+  font-size: smaller;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  text-align: left;
+  padding-top: 2rem;
+  color: var(--text-secondary-color);
 }
