@@ -1,49 +1,6 @@
-body {
-  background-color: #eff1f5;
-  color: #4c4f69;
-}
-
-button {
-  cursor: pointer;
-}
+@import './base.css';
 
 .Vue-Toastification__toast--success {
-  background-color: rgba(112, 219, 147);
-  color: #4c4f69;
+  background-color: var(--success-bg);
+  color: var(--text-primary-color);
 }
-
-/* @import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-} */

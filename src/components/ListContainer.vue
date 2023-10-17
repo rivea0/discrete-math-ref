@@ -47,11 +47,9 @@ const listOfSubjects = ref([
     </div>
   </div>
   <div class="formulas-container">
-    <div v-for="(item, index) in filteredValues" :key="index">
-      <div class="formula-card">
-        <h1>{{ item.title }}</h1>
-        <KatexElement :item="item" />
-      </div>
+    <div v-for="(item, index) in filteredValues" :key="index" class="formula-card">
+      <h1>{{ item.title }}</h1>
+      <KatexElement :item="item" />
     </div>
   </div>
 </template>
@@ -61,17 +59,26 @@ const listOfSubjects = ref([
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .subject-btn {
-  background-color: rgba(0, 0, 0, 0.03);
+  /* background-color: rgba(0, 0, 0, 0.03); */
+  background-color: var(--background-color-primary);
   padding: 16px;
-  border-color: rgba(147, 112, 219, 0.7);
+  border-color: rgba(147, 112, 219, 0.5);
   border-radius: 4px;
+  color: var(--text-primary-color);
 }
 
-.isActive {
-  background-color: rgba(135, 206, 235, 0.7);
+.subject-btn:hover {
+  background-color: var(--background-color-secondary);
+}
+
+.subject-btn.isActive {
+  /* background-color: rgba(135, 206, 235, 0.7); */
+  /* background-color: rgba(112, 184, 219, 0.5); */
+  background-color: var(--accent-color);
 }
 
 .formulas-container {
@@ -80,7 +87,17 @@ const listOfSubjects = ref([
   gap: 3rem;
   place-content: center;
   text-align: center;
-  font-size: smaller;
+  margin-top: 2rem;
+}
+
+.formula-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formula-card > h1 {
+  font-size: 1.1rem;
 }
 
 @media (orientation: portrait) {
@@ -88,8 +105,10 @@ const listOfSubjects = ref([
     flex-direction: column;
   }
   .formulas-container {
-    /* flex-direction: column; */
     grid-template-columns: 1fr;
+  }
+  .formula-card:not(h1) {
+    font-size: .75rem;
   }
 }
 </style>

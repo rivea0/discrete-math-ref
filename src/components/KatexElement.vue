@@ -51,20 +51,16 @@ function copyFormula() {
 
 <style scoped>
 button {
-  background-color: rgba(135, 206, 235, 0.5);
+  background-color: rgba(112, 184, 219, 0.25);
   padding: 8px 12px;
   border: white;
   border-radius: 8px;
+  color: var(--text-primary-color);
+  width: max-content;
+  align-self: center;
 }
 
-/* .Vue-Toastification__toast-body {
-      background-color: red;
-    } */
-
-/* .Vue-Toastification__toast.Vue-Toastification__toast--success.my-custom-toast-class {
-    background-color: red;
-  } */
-/* .Vue-Toastification__toast--success.my-custom-toast-class {
-        background-color: red;
-    } */
+button:hover {
+  background-color: rgba(112, 184, 219, 0.5);;
+}
 </style>
