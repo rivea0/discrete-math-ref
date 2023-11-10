@@ -2,7 +2,8 @@
 import { ref } from 'vue'
 import { formulas, convertToKey } from '../lib/utils'
 import type { FormulaItem } from '../lib/types'
-import KatexElement from './KatexElement.vue'
+// import KatexElement from './KatexElement.vue'
+import FormulaCard from './FormulaCard.vue';
 
 let allValues = Object.values(formulas).flat()
 let filteredValues = ref<FormulaItem[]>(allValues)
@@ -35,22 +36,20 @@ const listOfSubjects = ref([
 
 <template>
   <div class="subjects">
-    <div v-for="item of listOfSubjects" :key="item">
+    <div v-for="item of listOfSubjects" :key="item" data-test="subjects">
       <button
         @click="selectSubject"
         class="subject-btn"
         :class="{ isActive: activeButton === convertToKey(item) }"
         :value="convertToKey(item)"
+        data-test="subject-btn"
       >
         {{ item.toUpperCase() }}
       </button>
     </div>
   </div>
   <div class="formulas-container">
-    <div v-for="(item, index) in filteredValues" :key="index" class="formula-card">
-      <h1>{{ item.title }}</h1>
-      <KatexElement :item="item" />
-    </div>
+    <FormulaCard :filtered-values=filteredValues />
   </div>
 </template>
 
@@ -87,25 +86,12 @@ const listOfSubjects = ref([
   margin-top: 2rem;
 }
 
-.formula-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.formula-card > h1 {
-  font-size: 1.1rem;
-}
-
 @media (orientation: portrait) {
   .subjects {
     flex-direction: column;
   }
   .formulas-container {
     grid-template-columns: 1fr;
-  }
-  .formula-card:not(h1) {
-    font-size: .75rem;
   }
 }
 </style>
