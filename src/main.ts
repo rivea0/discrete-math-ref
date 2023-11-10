@@ -16,4 +16,5 @@ const options: PluginOptions = {
     }
   }
 }
+
 app.use(Toast, options)

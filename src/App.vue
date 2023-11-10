@@ -9,7 +9,7 @@ import SiteLinkIcon from './components/icons/SiteLinkIcon.vue'
 
 type UserTheme = 'light' | 'dark'
 
-const userTheme = ref<UserTheme>(getTheme() || getMediaPreference())
+const userTheme = ref<UserTheme>(getTheme())
 
 onMounted(() => setTheme(userTheme.value))
 
@@ -32,15 +32,15 @@ function toggleTheme() {
   }
 }
 
-function getMediaPreference(): UserTheme {
-  const hasDarkPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
-  return hasDarkPreference ? 'dark' : 'light'
-}
+// function getMediaPreference(): UserTheme {
+//   const hasDarkPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
+//   return hasDarkPreference ? 'dark' : 'light'
+// }
 </script>
 
 <template>
   <header>
-    <div class="title">
+    <div class="title" data-test="title">
       <h1>Reference Formulas</h1>
       <h4>from <a href="">Discrete Mathematics with Applications</a> by Susanna S. Epp</h4>
     </div>
@@ -60,11 +60,11 @@ function getMediaPreference(): UserTheme {
   </main>
   <footer>
     <div>
-      <p class="footer-primary">Made with &#128156; by Eda Eren. &copy; {{ new Date().getFullYear() }}</p>
+      <p class="footer-primary" data-test="footer-primary">Made with &#128156; by Eda Eren. &copy; {{ new Date().getFullYear() }}</p>
       <p>Rubik (fav)icon from <a href="https://www.svgrepo.com/collection/eighties-3/">the Eighties 3 collection</a> from SVG Repo.</p>
       <p>Icons from <a href="https://phosphoricons.com">Phosphor Icons</a>.</p>
       <div class="footer-icons">
-        <a href="https://github.com/rivea0" >
+        <a href="https://github.com/rivea0">
           <GitHubIcon :fill-color="userTheme === 'light' ? '#10131a' : '#eff1f5'" />
         </a>
         <a href="mailto:edae.space@gmail.com">

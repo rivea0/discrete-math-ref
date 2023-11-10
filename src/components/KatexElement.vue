@@ -45,8 +45,9 @@ function copyFormula() {
     v-html="katex?.renderToString(item.formula, { throwOnError: false })"
     ref="p"
     id="formula-text"
+    data-test="formula-text"
   ></p>
-  <button @click="copyFormula" :class="{}">Copy TeX source</button>
+  <button @click="copyFormula" data-test="copy-formula-btn">Copy TeX source</button>
 </template>
 
 <style scoped>
