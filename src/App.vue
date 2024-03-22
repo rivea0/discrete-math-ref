@@ -11,7 +11,7 @@ type UserTheme = 'light' | 'dark'
 
 const userTheme = ref<UserTheme>(getTheme())
 
-onMounted(() => setTheme(userTheme.value))
+onMounted(() => setTheme(userTheme.value || getMediaPreference()))
 
 function setTheme(theme: UserTheme) {
   localStorage.setItem('user-theme', theme)
@@ -32,10 +32,10 @@ function toggleTheme() {
   }
 }
 
-// function getMediaPreference(): UserTheme {
-//   const hasDarkPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
-//   return hasDarkPreference ? 'dark' : 'light'
-// }
+function getMediaPreference(): UserTheme {
+  const hasDarkPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
+  return hasDarkPreference ? 'dark' : 'light'
+}
 </script>
 
 <template>
