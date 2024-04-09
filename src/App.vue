@@ -4,7 +4,6 @@ import ListContainer from './components/ListContainer.vue'
 import LightThemeIcon from './components/icons/LightThemeIcon.vue'
 import DarkThemeIcon from './components/icons/DarkThemeIcon.vue'
 import GitHubIcon from './components/icons/GitHubIcon.vue'
-import MailIcon from './components/icons/MailIcon.vue'
 import SiteLinkIcon from './components/icons/SiteLinkIcon.vue'
 
 type UserTheme = 'light' | 'dark'
@@ -66,9 +65,6 @@ function getMediaPreference(): UserTheme {
       <div class="footer-icons">
         <a href="https://github.com/rivea0">
           <GitHubIcon :fill-color="userTheme === 'light' ? '#10131a' : '#eff1f5'" />
-        </a>
-        <a href="mailto:edae.space@gmail.com">
-          <MailIcon :fill-color="userTheme === 'light' ? '#10131a' : '#eff1f5'" />
         </a>
         <a href="https://rivea0.github.io">
           <SiteLinkIcon :fill-color="userTheme === 'light' ? '#10131a' : '#eff1f5'" />
