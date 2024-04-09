@@ -59,8 +59,14 @@ function getMediaPreference(): UserTheme {
   </main>
   <footer>
     <div>
-      <p class="footer-primary" data-test="footer-primary">Made with &#128156; by Eda Eren. &copy; {{ new Date().getFullYear() }}</p>
-      <p>Rubik (fav)icon from <a href="https://www.svgrepo.com/collection/eighties-3/">the Eighties 3 collection</a> from SVG Repo.</p>
+      <p class="footer-primary" data-test="footer-primary">
+        Made with &#128156; by Eda Eren. &copy; {{ new Date().getFullYear() }}
+      </p>
+      <p>
+        Rubik (fav)icon from
+        <a href="https://www.svgrepo.com/collection/eighties-3/">the Eighties 3 collection</a> from
+        SVG Repo.
+      </p>
       <p>Icons from <a href="https://phosphoricons.com">Phosphor Icons</a>.</p>
       <div class="footer-icons">
         <a href="https://github.com/rivea0">
@@ -115,7 +121,7 @@ h4 {
 .footer-icons {
   display: flex;
   gap: 1rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   justify-content: center;
 }
 
