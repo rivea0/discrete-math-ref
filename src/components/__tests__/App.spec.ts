@@ -1,10 +1,23 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import App from '../../App.vue'
 import GitHubIconVue from '../icons/GitHubIcon.vue'
 import MailIconVue from '../icons/MailIcon.vue'
 import SiteLinkIconVue from '../icons/SiteLinkIcon.vue'
 
+// See https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
+// Vitest is similar
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: vi.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
+});
 
 describe('App', () => {
   it('renders properly', () => {
