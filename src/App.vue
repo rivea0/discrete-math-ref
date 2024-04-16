@@ -41,7 +41,7 @@ function getMediaPreference(): UserTheme {
   <header>
     <div class="title" data-test="title">
       <h1>Reference Formulas</h1>
-      <h4>from <a href="">Discrete Mathematics with Applications</a> by Susanna S. Epp</h4>
+      <h4>from <a href="https://openlibrary.org/books/OL31938751M/Discrete_mathematics_with_applications">Discrete Mathematics with Applications</a> by Susanna S. Epp</h4>
     </div>
     <div class="theme">
       <button @click="toggleTheme" class="theme-btn">
