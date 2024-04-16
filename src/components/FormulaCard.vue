@@ -2,24 +2,21 @@
 import KatexElement from './KatexElement.vue'
 import type { FormulaItem } from '../lib/types'
 
-
 defineProps<{
   filteredValues: FormulaItem[]
 }>()
 </script>
 
-
 <template>
-  <div 
-    v-for="(item, index) in filteredValues" 
-    :key="index" 
-    class="formula-card" 
+  <div
+    v-for="(item, index) in filteredValues"
+    :key="index"
+    class="formula-card"
     data-test="formulas"
   >
     <h1>{{ item.title }}</h1>
     <KatexElement :item="item" />
   </div>
-
 </template>
 
 <style scoped>
@@ -35,9 +32,7 @@ defineProps<{
 
 @media (orientation: portrait) {
   .formula-card:not(h1) {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
-
 }
-
 </style>

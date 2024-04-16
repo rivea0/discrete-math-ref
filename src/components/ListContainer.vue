@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { formulas, convertToKey } from '../lib/utils'
 import type { FormulaItem } from '../lib/types'
 // import KatexElement from './KatexElement.vue'
-import FormulaCard from './FormulaCard.vue';
+import FormulaCard from './FormulaCard.vue'
 
 let allValues = Object.values(formulas).flat()
 let filteredValues = ref<FormulaItem[]>(allValues)
@@ -49,7 +49,7 @@ const listOfSubjects = ref([
     </div>
   </div>
   <div class="formulas-container">
-    <FormulaCard :filtered-values=filteredValues />
+    <FormulaCard :filtered-values="filteredValues" />
   </div>
 </template>
 

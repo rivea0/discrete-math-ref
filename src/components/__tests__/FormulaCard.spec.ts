@@ -25,7 +25,7 @@ describe('FormulaCard', () => {
     const wrapper = mount(FormulaCard, { props: { filteredValues: mockFilteredValues } })
 
     expect(wrapper.text()).toContain(mockFilteredValues[0].title)
-    expect(wrapper.text()).toContain(mockFilteredValues[1].title) 
+    expect(wrapper.text()).toContain(mockFilteredValues[1].title)
   })
 
   it('renders KatexElement', () => {

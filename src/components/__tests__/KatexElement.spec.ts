@@ -19,7 +19,6 @@ const mockItem = {
 //     </span>`
 // }
 
-
 describe('KatexElement', () => {
   it('renders properly', () => {
     const wrapper = mount(KatexElement, { props: { item: mockItem } })
