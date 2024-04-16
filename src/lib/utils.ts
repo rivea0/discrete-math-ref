@@ -74,9 +74,9 @@ export const formulas = {
       formula: 'P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}'
     },
     {
-      title: "Bayes's formula",
+      title: "Bayes' theorem",
       formula:
-        'P(B_k \\mid A) = \\frac{P(A \\mid B_k)P(B_k)}{P(A \\mid B_1)P(B_1) + P(A \\mid B_2)P(B_2) + \\ ... \\ +  P(A \\mid B_n)P(B_n)}'
+        'P(A \\mid B) = \\frac{P(B \\mid A)P(A)}{P(B)}'
     }
   ],
   lawsOfExponents: [
